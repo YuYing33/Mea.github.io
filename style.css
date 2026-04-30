@@ -88,3 +88,47 @@ footer {
   background: var(--white);
   border-top: 1px solid #eee;
 }
+
+/* gallery 布局 */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* 每个方块 */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+/* 图片 */
+.gallery-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: 0.3s;
+}
+
+/* 悬停放大 */
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* 黑色渐变文字层 */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 15px;
+  color: white;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+/* 悬停显示文字 */
+.gallery-item:hover .overlay {
+  opacity: 1;
+}
